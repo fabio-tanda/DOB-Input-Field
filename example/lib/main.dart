@@ -43,6 +43,10 @@ class _MyHomePageState extends State<MyHomePage> {
             style: TextStyle(fontWeight: FontWeight.w900),
           ),
           DOBInputField(
+            readOnly: true,
+            onTap: () {
+              print("Tapped");
+            },
             firstDate: DateTime(1900),
             lastDate: DateTime.now(),
             showLabel: true,

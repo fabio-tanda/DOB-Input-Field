@@ -17,6 +17,7 @@ class DOBInputField extends StatefulWidget {
     this.onDateSubmitted,
     this.showLabel = false,
     this.onTap,
+    this.readOnly = false,
     this.dateFormatType = DateFormatType.DDMMYYYY,
     this.inputDecoration = const InputDecoration(
       border: OutlineInputBorder(
@@ -141,6 +142,8 @@ class DOBInputField extends StatefulWidget {
 
   /// 
   final void Function()? onTap;
+
+  final bool readOnly;
 
   @override
   State<DOBInputField> createState() => _DOBInputFieldState();
@@ -365,6 +368,7 @@ class _DOBInputFieldState extends State<DOBInputField> {
       autofocus: widget.autofocus,
       controller: _controller,
       onTap: widget.onTap,
+      readOnly: widget.readOnly,
     );
   }
 
