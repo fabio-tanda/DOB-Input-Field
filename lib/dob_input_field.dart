@@ -16,6 +16,7 @@ class DOBInputField extends StatefulWidget {
     this.cursorColor = Colors.black,
     this.onDateSubmitted,
     this.showLabel = false,
+    this.onTap,
     this.dateFormatType = DateFormatType.DDMMYYYY,
     this.inputDecoration = const InputDecoration(
       border: OutlineInputBorder(
@@ -137,6 +138,9 @@ class DOBInputField extends StatefulWidget {
 
   /// {@macro flutter.widgets.editableText.autofocus}
   final bool autofocus;
+
+  /// 
+  final void Function()? onTap;
 
   @override
   State<DOBInputField> createState() => _DOBInputFieldState();
@@ -360,6 +364,7 @@ class _DOBInputFieldState extends State<DOBInputField> {
       onFieldSubmitted: _handleSubmitted,
       autofocus: widget.autofocus,
       controller: _controller,
+      onTap: widget.onTap,
     );
   }
 
